@@ -1,0 +1,33 @@
+{
+  "name": "docker-check",
+  "version": "0.0.1",
+  "description": "A tiny dockerized application for running simple diagnostics on a docker host.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install": "npm run build",
+    "build": "tsc",
+    "docker:build": "npm run build && docker build -t nbering/docker-check .",
+    "docker:shell": "docker run --init --rm -it nbering/docker-check /bin/bash",
+    "docker:run": "docker run -p 8080:8080 --rm -it nbering/docker-check",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nbering/docker-check.git"
+  },
+  "author": "Nicholas Bering <bering.nicholas@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nbering/docker-check/issues"
+  },
+  "homepage": "https://github.com/nbering/docker-check#readme",
+  "devDependencies": {
+    "@types/express": "^4.0.36",
+    "@types/node": "^8.0.20",
+    "typescript": "^2.4.2"
+  },
+  "dependencies": {
+    "express": "^4.15.4"
+  }
+}
