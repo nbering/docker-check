@@ -6,7 +6,8 @@ RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
 COPY package.json /usr/src/app
-RUN npm install --only=prod --no-optional
+RUN npm install -g node-gyp; \
+    npm install --only=prod --no-optional
 
 COPY . /usr/src/app
 

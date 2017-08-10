@@ -9,7 +9,7 @@
     "build": "tsc",
     "docker:build": "npm run build && docker build -t nbering/docker-check .",
     "docker:shell": "docker run --init --rm -it nbering/docker-check /bin/bash",
-    "docker:run": "docker run -p 8080:8080 --rm -it nbering/docker-check",
+    "docker:run": "docker run --init -p 8080:8080 --rm -it nbering/docker-check",
     "start": "node index.js"
   },
   "repository": {
@@ -24,10 +24,12 @@
   "homepage": "https://github.com/nbering/docker-check#readme",
   "devDependencies": {
     "@types/express": "^4.0.36",
+    "@types/mongodb": "^2.2.9",
     "@types/node": "^8.0.20",
     "typescript": "^2.4.2"
   },
   "dependencies": {
-    "express": "^4.15.4"
+    "express": "^4.15.4",
+    "mongodb": "^2.2.31"
   }
 }
