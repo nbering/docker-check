@@ -48,7 +48,8 @@ function testPutObject(
     req.test.client.putObject(params, (err, result) => {
         let results: IS3TestResult = {
             action: "s3:PutObject",
-            success: !err
+            success: !err,
+            message: `Object key: ${params.Key}`
         };
         test.results.push(results);
         if (result && result.VersionId)
