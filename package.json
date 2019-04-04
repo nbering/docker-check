@@ -1,6 +1,6 @@
 {
   "name": "docker-check",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A tiny dockerized application for running simple diagnostics on a docker host.",
   "main": "index.js",
   "scripts": {
