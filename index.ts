@@ -27,6 +27,14 @@ if (CONFIG.diagnostics){
     });
 }
 
-app.listen(8080, function(){
+const server = app.listen(8080, function(){
     console.log("Listening on port 8080.");
+});
+
+process.on("SIGINT", () => {
+    console.log("Server received SIGINT, shutting down...");
+    console.log("Closing HTTP server...");
+    server.close(() => {
+        console.log("HTTP server closed.");
+    });
 });
