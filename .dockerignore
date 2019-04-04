@@ -1,7 +1,14 @@
 .envrc
 
+.git
+.gitignore
+
 node_modules
 npm-debug.log
 spec
 
 **/*.ts
+tsconfig.json
+
+.dockerignore
+Dockerfile
