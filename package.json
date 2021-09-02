@@ -24,7 +24,6 @@
   "homepage": "https://github.com/nbering/docker-check#readme",
   "devDependencies": {
     "@types/express": "^4.16.1",
-    "@types/mongodb": "^2.2.23",
     "@types/node": "^8.10.45",
     "@types/uuid": "^3.4.4",
     "typescript": "^2.9.2"
@@ -34,7 +33,6 @@
     "aws-sdk": "^2.435.0",
     "cors": "^2.8.5",
     "express": "^4.16.4",
-    "mongodb": "^2.2.36",
     "uuid": "^3.3.2"
   }
 }
