@@ -1,4 +1,4 @@
-FROM node:dubnium
+FROM node:16-bullseye-slim
 
 EXPOSE 8080
 
