@@ -6,10 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
-    "docker:build": "npm run build && docker build -t nbering/docker-check .",
+    "docker:build": "docker build -t nbering/docker-check .",
     "docker:shell": "docker run --init --rm -it nbering/docker-check /bin/bash",
     "docker:run": "docker run --init -p 8080:8080 --rm -it nbering/docker-check",
-    "start": "node index.js"
+    "start": "node dist/index.js"
   },
   "repository": {
     "type": "git",
