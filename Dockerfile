@@ -1,14 +1,22 @@
-FROM node:16-bullseye-slim
+FROM node:16-bullseye-slim AS builder
 
-EXPOSE 8080
+WORKDIR /usr/src/app
+COPY package*.json ./
+RUN npm ci
+# COPY tsconfig*.json ./
+COPY . .
+RUN npm run build
+
+FROM node:16-bullseye-slim
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
-COPY package.json /usr/src/app
-RUN npm install -g node-gyp; \
-    npm install --only=prod --no-optional
+COPY package*.json ./
 
-COPY . /usr/src/app
+RUN npm install --only=prod --no-optional
 
+COPY --from=builder /usr/src/app/dist dist/
+
+EXPOSE 8080
 CMD ["npm", "start"]
