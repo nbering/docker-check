@@ -2,6 +2,7 @@ import * as express from "express";
 import {CONFIG} from  "./lib/config";
 import {s3Router} from "./lib/s3-check";
 import {DiagnosticRouter} from "./lib/request-diagnostic";
+import { ErrorsRouter } from "./lib/errors";
 
 const app = express();
 
@@ -23,6 +24,11 @@ if (CONFIG.diagnostics){
     CONFIG.diagnostics.forEach(val => {
         app.use(DiagnosticRouter(val));
     });
+}
+
+if (CONFIG.errors !== undefined){
+    console.log("Configuring errors route.")
+    app.use(ErrorsRouter(CONFIG.errors))
 }
 
 const server = app.listen(8080, function(){

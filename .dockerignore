@@ -7,8 +7,6 @@ node_modules
 npm-debug.log
 spec
 
-**/*.ts
-tsconfig.json
-
+dist
 .dockerignore
 Dockerfile

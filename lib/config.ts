@@ -1,5 +1,6 @@
-import {readFileSync} from "fs"
-import {IDiagnosticRouterOptions} from "./request-diagnostic";
+import { readFileSync } from "fs"
+import { IErrorsRouterOptions } from "./errors";
+import { IDiagnosticRouterOptions } from "./request-diagnostic";
 
 export const S3_BUCKET = process.env["S3_BUCKET"];
 export const S3_PREFIX = process.env["S3_PREFIX"] || "tests/";
@@ -33,4 +34,5 @@ function tryParseJSON(str: string): any{
 
 export interface IDockerCheckConfig {
     diagnostics?: IDiagnosticRouterOptions[];
+    errors?: IErrorsRouterOptions;
 }
